@@ -12,28 +12,41 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
-<distributionManagement>
-  <snapshotRepository>
-    <id>my-user</id>
-    <url>http://192.168.200.22:8081/repository/snapshop-repo/</url>
-  </snapshotRepository>
-</distributionManagement>
 
-    <build>
-        <plugins>
-            <!-- Package as executable JAR -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.3.0</version>
-                <configuration>
-                    <archive>
-                        <manifest>
-                            <mainClass>HelloWorldLoop</mainClass>
-                        </manifest>
-                    </archive>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+  <distributionManagement>
+    <repository>
+      <id>nexus-hosted</id>
+      <name>artifact-hosted-release</name>
+      <url>http://192.168.200.22:8081/repository/artifact-hosted-release/</url>
+    </repository>
+    <snapshotRepository>
+      <id>nexus-hosted</id>
+      <name>snapshot-repo</name>
+      <url>http://192.168.200.22:8081/repository/snapshot-repo/</url>
+    </snapshotRepository>
+  </distributionManagement>
+<build>
+    <plugins>
+        <!-- Maven Deploy Plugin -->
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-deploy-plugin</artifactId>
+            <version>3.1.1</version>
+        </plugin>
+
+      
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.3.0</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>HelloWorldLoop</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
 </project>
