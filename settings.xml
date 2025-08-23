@@ -1,0 +1,22 @@
+ <repositories>
+    <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://44.202.168.24:8081/repository/group-maven/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://44.202.168.24:8081/repository/group-maven/</url>
+      <layout>default</layout>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
